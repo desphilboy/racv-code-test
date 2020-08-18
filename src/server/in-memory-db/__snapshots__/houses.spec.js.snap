@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`In Memory DB Houses Table is created without problem 1`] = `
+Object {
+  "findAll": [Function],
+  "findAllBySuburb": [Function],
+  "init": [Function],
+  "insert": [Function],
+}
+`;
