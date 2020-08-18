@@ -8,8 +8,18 @@ router.use(function timeLog(req, res, next) {
 	next();
 });
 
+export const validateRequest = (req, res, next) => {
+	const { body } = req;
+
+	if (body && body.salePrice && body.address) {
+		return next();
+	}
+
+	throw { status: 400, message: 'needs salePrice and address' };
+};
+
 // define the home page route
-router.post('/', postHandler);
+router.post('/', validateRequest, postHandler);
 // define the about route
 router.get('/', getHandler);
 

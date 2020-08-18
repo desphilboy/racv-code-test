@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "65ec5d85-2021-46fe-8fdd-838144a22d1f",
+		"name": "racv-code-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get properties with suburb filter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:6543/properties?suburb=Tarneit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6543",
+					"path": [
+						"properties"
+					],
+					"query": [
+						{
+							"key": "suburb",
+							"value": "Tarneit"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get properties no filter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:6543/properties?suburb=Tarneit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6543",
+					"path": [
+						"properties"
+					],
+					"query": [
+						{
+							"key": "suburb",
+							"value": "Tarneit"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post property",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"suburb\": \"Point Cook\",\n    \"zip\": \"3030\",\n    \"address\": \"18 Tanoa Circle\",\n    \"description\": \"some description\",\n    \"salePrice\": \"780000\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6543/properties",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6543",
+					"path": [
+						"properties"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post property without suburb returns error",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \n    \"zip\": \"3030\",\n    \"address\": \"18 Tanoa Circle\",\n    \"description\": \"some description\",\n    \"salePrice\": \"780000\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:6543/properties",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6543",
+					"path": [
+						"properties"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
